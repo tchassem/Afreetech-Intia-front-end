@@ -26,8 +26,10 @@ const AssuranceList = () => {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nom</th>
-                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Montant</th>
+                        <th>Date Debut</th>
+                        <th>Date Fin</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -35,10 +37,12 @@ const AssuranceList = () => {
                     {assurances.map((assurance) => (
                         <tr key={assurance.id}>
                             <td>{assurance.id}</td>
-                            <td>{assurance.nom}</td>
-                            <td>{assurance.description}</td>
+                            <td>{assurance.typeAssurance}</td>
+                            <td>{assurance.montant}</td>
+                            <td>{assurance.dateDebut}</td>
+                            <td>{assurance.dateFin}</td>
                             <td>
-                                <Link className="btn btn-info" to={`/edit/${assurance.id}`}>
+                                <Link className="btn btn-info" to={`/assurances/edit/${assurance.id}`}>
                                     Modifier
                                 </Link>
                                 <button className="btn btn-danger" onClick={() => deleteAssurance(assurance.id)}>
